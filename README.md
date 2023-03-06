@@ -6,6 +6,7 @@
 - 0x04-more_functions_nested_loops
 - 0x05-pointers_arrays_strings
 - 0x06-pointers_arrays_strings
+- 0x07-pointers_arrays_strings
 ## Contributors
 
 - @[**sara mabrouk**](https://github.com/Sara-mabrouk) `Full stack developer`
