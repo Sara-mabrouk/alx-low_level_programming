@@ -1,23 +1,22 @@
-#include<stdio.h>
 #include "main.h"
-
 /**
- * _memcpy - copy n bytes from src to dest
- * @dest: character array to be filled
- * @src: source char array that will be copied from
- * @n: number chars to be copied
+ * _memcpy - a function that copies memory area
+ * @dest: memory where is stored
+ * @src: memory where is copies
+ * @n: member of bytes
  *
- * Return: character array to destination 'dest'
+ * Return: copied memory with n byted changed
  */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i = 0;
+	int r = 0;
+	int i = n;
 
-	for (i = 0; i < n; i++)
+	for (; r < i; r++)
 	{
-		dest[i] = src[i];
+		dest[r] = src[r];
+		n--;
 	}
-
 	return (dest);
 }
