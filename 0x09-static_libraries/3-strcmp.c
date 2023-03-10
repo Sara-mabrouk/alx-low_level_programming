@@ -1,22 +1,28 @@
 #include "main.h"
 
 /**
- * _strcmp - Compares 2 string ending at first different byte
- * @s1: pointer to first string.
- * @s2: pointer to second string.
+ * _strcmp -> a function that compares two strings.
  *
- * Return: If str1 < str2, the negative difference
- *         If str1 == str2, 0.
- *         If str1 > str2, the positive difference
+ * @s1: s1 is a pointer to char parameter
+ * @s2: s2 is a pointer to char parameter
+ *
+ * Return:
+ * -> positive: s1 ascii value higher than s2.
+ * -> negative:	s1 ascii value less than s2.
+ * -> (0): s1 == s2
  */
 
 int _strcmp(char *s1, char *s2)
 {
-	while (*s1 && *s2 && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
+	int i, res = 0;
 
-	return (*s1 - *s2);
+	for (i = 0; s1[i]; i++)
+	{
+		if (s1[i] != s2[i])
+		{
+			res = s1[i] - s2[i];
+			break;
+		}
+	}
+	return (res);
 }
