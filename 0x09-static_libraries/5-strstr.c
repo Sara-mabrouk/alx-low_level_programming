@@ -1,46 +1,35 @@
-#include<stdio.h>
 #include "main.h"
 
 /**
- * _strstr - finds first occurence of needle string in haystack
+ * _strstr -> a function that locates a substring.
  *
- * @haystack: char array to be searched
- * @needle: string to be matched
+ * @haystack: haystack is a pointer to char parameter
+ * @needle: needle is a pointer to char parameter
  *
- * Return: address of first char byte of the occurence of needle
- *
- * deduction: find length of needle.
- *			  use needle length to see if string is complete
- *			  iterate through all the characters
- *			  if match, increase needle index
- *			  if the needle index j is == len, then return ...
- *			  the haystack index starting at i - length of string
- *			  if j incremented, but stopped matching, reset j = 0
+ * Return: a pointer to the beginning of the located substring,
+ * or NULL if the substring is not found.
  */
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0, j = 0, len = 0;
+	int i;
 
 	if (*needle == 0)
 		return (haystack);
 
-	while (needle[i++])
+	while (*haystack)
 	{
-		len++;
-	}
+		i = 0;
 
-
-	for (i = 0; haystack[i]; i++)
-	{
-		if (j > 0 && haystack[i] != needle[j])
-			j = 0;
-		if (haystack[i] == needle[j])
+		if (haystack[i] == needle[i])
 		{
-			j += 1;
+			do {
+				if (needle[i + 1] == '\0')
+					return (haystack);
+				i++;
+			} while (haystack[i] == needle[i]);
 		}
-		if (j == len)
-			return (haystack + i - len + 1);
+		haystack++;
 	}
-	return (NULL);
+	return ('\0');
 }

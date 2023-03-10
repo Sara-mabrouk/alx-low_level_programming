@@ -1,31 +1,31 @@
-#include<stdio.h>
 #include "main.h"
 
 /**
- * _strspn - returns number of first set of matching characters
+ * _strspn -> a function that gets the length of a prefix substring.
  *
- * @s: char array to be searched
- * @accept: string of bytes to be matched
+ * @s: s is a pointer to char parameter.
+ * @accept: accept is a pointer to char parameter.
  *
- * Return: number of bytes matched
+ * Return: the number of bytes in the initial segment of s
+ * which consist only of bytes from accept
  */
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i = 0, j = 0, count = 0;
+	int i, j, count = 0;
 
-	for (; s[i]; i++)
+	for (i = 0; s[i]; i++)
 	{
 		for (j = 0; accept[j]; j++)
 		{
 			if (s[i] == accept[j])
 			{
-				count += 1;
+				count++;
+				break;
 			}
 		}
-		if (!(count > i))
+		if (count != i + 1)
 			break;
 	}
 	return (count);
-
 }
