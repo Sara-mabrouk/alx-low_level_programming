@@ -1,12 +1,17 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
- * _puts - prints a string,followed  by a new line,to stdout
- * @str: this is my input string
- * Return: void
+ * _puts - mimics the C puts function
+ * @str: pointer to first element of string array
  */
 
 void _puts(char *str)
 {
-	_puts(str);
+	while (*str != '\0')
+	{
+		_putchar(*str);
+		str += 1;
+	}
+	_putchar('\n');
 }

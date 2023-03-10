@@ -1,28 +1,31 @@
+#include<stdio.h>
 #include "main.h"
+
 /**
- * _strspn - Entry point
- * @s:  input
- * @accept: input
- * Return: Always 0 (success)
+ * _strspn - returns number of first set of matching characters
+ *
+ * @s: char array to be searched
+ * @accept: string of bytes to be matched
+ *
+ * Return: number of bytes matched
  */
+
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int n = 0;
-	int r;
+	unsigned int i = 0, j = 0, count = 0;
 
-	while (*s)
+	for (; s[i]; i++)
 	{
-		for (r = 0; accept[r]; r++)
+		for (j = 0; accept[j]; j++)
 		{
-			if (*s == accept[r])
+			if (s[i] == accept[j])
 			{
-				n++;
-				break;
+				count += 1;
 			}
-			else if (accept[r + 1] == '\0')
-				return (n);
 		}
-		s++;
+		if (!(count > i))
+			break;
 	}
-	return (n);
+	return (count);
+
 }
