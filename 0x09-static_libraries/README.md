@@ -1,4 +1,4 @@
-# 0x09. C - Static libraries
+# 0x09-static_libraries
 
   * [libmy.a](./libmy.a)
   * [create_static_lib.sh](./create_static_lib.sh)
@@ -18,4 +18,3 @@
   * [9-strcpy.c](./9-strcpy.c)
   * [100-atoi.c](./100-atoi.c)
   * [liball.a](./liball.a)
-
