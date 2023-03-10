@@ -1,14 +1,17 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
-* _puts - Print a string folllowed by a new line.
-*
-* @str: String to be printed
-*
-* Return: Nothing
-*/
+ * _puts - mimics the C puts function
+ * @str: pointer to first element of string array
+ */
 
 void _puts(char *str)
 {
-	printf("%s\n", str);
+	while (*str != '\0')
+	{
+		_putchar(*str);
+		str += 1;
+	}
+	_putchar('\n');
 }
