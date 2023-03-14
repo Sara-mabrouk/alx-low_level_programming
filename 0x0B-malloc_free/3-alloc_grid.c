@@ -11,29 +11,44 @@
 /*****************************************************************************/
 
 #include<stdlib.h>
+#include<stdio.h>
 
 /**
- * create_array - a function ...
- * @size: the int
- * @c: the char
+ * alloc_grid - a function ...
+ * @width: the chaine
+ * @height:
  *
  * Return: 1 or 0
  */
 
-char *create_array(unsigned int size, char c)
+int **alloc_grid(int width, int height)
 {
-	char *tab;
-	unsigned int i;
+	int **tableau2d;
+	int i, j;
 
-	if (size == 0)
+	if (width == 0 || height == 0)
 		return (NULL);
-	tab = malloc(size * sizeof(char));
-	if (tab != NULL)
+	tableau2d = malloc(height * sizeof(int *));
+
+	if (tableau2d == NULL)
+		return (NULL);
+
+	for (i = 0; i < height; ++i)
 	{
-		for (i = 0; i < size; i++)
-			tab[i] = c;
+		tableau2d[i] = malloc(width * sizeof(int));
+		if (tableau2d[i] == NULL)
+		{
+			for (; i >= 0; i--)
+				free(tableau2d[i]);
+			free(tableau2d);
+			return (NULL);
+		}
 	}
 
-	return (tab);
+	for (i = 0; i < height; ++i)
+		for (j = 0; j < width; j++)
+			tableau2d[i][j] = 0;
+
+	return (tableau2d);
 }
 

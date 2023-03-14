@@ -1,38 +1,92 @@
-#include "main.h"
+/*****************************************************************************/
+/*                                                                           */
+/*                                               _____  ______    ____  ___  */
+/* 0-memset.c                                   /  _  \ |    |    \   \/  /  */
+/*                                             /  /_\  \|    |     \     /   */
+/* By: Barahmou   <hamabarhamou@gmail.com>    /    |    \    |___  /     \   */
+/*                                            \____|__  /_______ \/___/\  \  */
+/* Created: 2022-03-28 09:44:03   $Barahmou           \/        \/      \_/  */
+/* Updated: 2022-03-28 09:44:03 by Barahmou                                  */
+/*                                                                           */
+/*****************************************************************************/
+
+#include<stdlib.h>
+#include<stdio.h>
+
+#include<stdlib.h>
 
 /**
- * str_concat -> a function that concatenates two strings.
+* ft_strlen - a function
+* @str: the chaine
+*
+* Return: 1 or 0
+*/
+
+int ft_strlen(char *str)
+{
+	int i = 0;
+
+	while (str[i])
+		i++;
+	return (i);
+}
+
+/**
+* ft_strcpy - a functio
+* @src: the chaine
+*
+* Return: 1 or 0
+*/
+char *ft_strcpy(char *src)
+{
+	char *str = malloc((ft_strlen(src) + 1) * sizeof(char));
+	int i = 0;
+
+	while (src[i])
+	{
+		str[i] = src[i];
+		i++;
+	}
+	return (str);
+}
+
+/**
+ * str_concat - a function ...
+ * @s1: the chaine
+ * @s2: the chaine
  *
- * @s1: s1 is a pointer to char parameter.
- * @s2: s2 is a pointer to char parameter.
- *
- * Return: a pointer to new string or NULL.
+ * Return: 1 or 0
  */
 
-char *str_concat(char *s1, char *s2)
+char  *str_concat(char *s1, char *s2)
 {
-	char *strc;
-	int i, j, k;
+	char *src;
+	int len1 = 0, i = 0, len2 = 0, j = 0;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	for (i = 0; s1[i]; i++)
-		;
-	for (j = 0; s2[j]; j++)
-		;
-
-	strc = malloc(sizeof(char) * (i + j + 1));
-
-	if (strc == NULL)
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	src = malloc((len1 + len2 + 1) * sizeof(char));
+	if (src == NULL)
 		return (NULL);
+	{
+		while (s1[i])
+		{
+			src[i] = s1[i];
+			i++;
+		}
 
-	for (k = 0; k < i; k++)
-		strc[k] = s1[k];
-	for (i = 0; i < j; k++, i++)
-		strc[k] = s2[i];
-
-	return (strc);
+		while (s2[j])
+		{
+			src[i] = s2[j];
+			i++;
+			j++;
+		}
+		src[i] = '\0';
+	}
+	return (src);
 }

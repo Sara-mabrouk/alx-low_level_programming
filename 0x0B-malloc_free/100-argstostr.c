@@ -10,30 +10,43 @@
 /*                                                                           */
 /*****************************************************************************/
 
-#include<stdlib.h>
-
+#include "main.h"
+#include <stdlib.h>
 /**
- * create_array - a function ...
- * @size: the int
- * @c: the char
- *
- * Return: 1 or 0
+ * argstostr - main entry
+ * @ac: int input
+ * @av: double pointer array
+ * Return: 0
  */
-
-char *create_array(unsigned int size, char c)
+char *argstostr(int ac, char **av)
 {
-	char *tab;
-	unsigned int i;
+	int i, n, r = 0, l = 0;
+	char *str;
 
-	if (size == 0)
+	if (ac == 0 || av == NULL)
 		return (NULL);
-	tab = malloc(size * sizeof(char));
-	if (tab != NULL)
+
+	for (i = 0; i < ac; i++)
 	{
-		for (i = 0; i < size; i++)
-			tab[i] = c;
+		for (n = 0; av[i][n]; n++)
+			l++;
 	}
+	l += ac;
 
-	return (tab);
+	str = malloc(sizeof(char) * l + 1);
+	if (str == NULL)
+		return (NULL);
+	for (i = 0; i < ac; i++)
+	{
+	for (n = 0; av[i][n]; n++)
+	{
+		str[r] = av[i][n];
+		r++;
+	}
+	if (str[r] == '\0')
+	{
+		str[r++] = '\n';
+	}
+	}
+	return (str);
 }
-

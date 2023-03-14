@@ -11,29 +11,22 @@
 /*****************************************************************************/
 
 #include<stdlib.h>
+#include<stdio.h>
 
 /**
- * create_array - a function ...
- * @size: the int
- * @c: the char
+ * free_grid - a function ...
+ * @grid: the matrice
+ * @height: the number
  *
  * Return: 1 or 0
  */
 
-char *create_array(unsigned int size, char c)
+void free_grid(int **grid, int height)
 {
-	char *tab;
-	unsigned int i;
+	int i = 0;
 
-	if (size == 0)
-		return (NULL);
-	tab = malloc(size * sizeof(char));
-	if (tab != NULL)
-	{
-		for (i = 0; i < size; i++)
-			tab[i] = c;
-	}
-
-	return (tab);
+	for (i = 0; i < height; i++)
+		free(grid[i]);
+	free(grid);
 }
 
