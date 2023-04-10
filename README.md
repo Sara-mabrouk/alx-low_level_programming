@@ -20,6 +20,7 @@
 - [0x10-variadic_functions](./0x10-variadic_functions)
 - [0x12-singly_linked_lists](./0x12-singly_linked_lists)
 - [0x14-bit_manipulation](./0x14-bit_manipulation)
+- - [0x15-file_io](./0x15-file_io)
 
 ## Contributors
 
