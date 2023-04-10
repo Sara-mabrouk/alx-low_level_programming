@@ -19,6 +19,8 @@
 - [0x0F-function_pointers](./0x0F-function_pointers)
 - [0x10-variadic_functions](./0x10-variadic_functions)
 - [0x12-singly_linked_lists](./0x12-singly_linked_lists)
+- [0x14-bit_manipulation](./0x14-bit_manipulation)
+
 ## Contributors
 
 - @[**sara mabrouk**](https://github.com/Sara-mabrouk) `Full stack developer`
