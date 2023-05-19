@@ -1,5 +1,10 @@
 # alx-low_level_programming
 
+- This repository contains programs written for the low-level programming and algorithm track with [ALX Africa](https://www.alxafrica.com/) facilitated by [Holberton School](https://www.holbertonschool.com/). I am learning about data structures, algorithms, and other low-level programming concepts working in the C language. 
+
+
+---
+
 - [0x00-hello_world](./0x00-hello_world)
 - [0x01-variables_if_else_while](./0x01-variables_if_else_while)
 - [0x02-functions_nested_loops](./0x02-functions_nested_loops)
@@ -15,13 +20,12 @@
 - [0x0C-more_malloc_free](./0x0C-more_malloc_free)
 - [0x0D-preprocessor](./0x0D-preprocessor)
 - [0x0E-structures_typedef](./0x0E-structures_typedef)
-- [0x0E-structures_typedef](./0x0E-structures_typedef)
 - [0x0F-function_pointers](./0x0F-function_pointers)
 - [0x10-variadic_functions](./0x10-variadic_functions)
 - [0x12-singly_linked_lists](./0x12-singly_linked_lists)
+- [0x13-more_singly_linked_lists](./0x13-more_singly_linked_lists)
+- [0x15-file_io](./0x15-file_io)
 - [0x14-bit_manipulation](./0x14-bit_manipulation)
-- - [0x15-file_io](./0x15-file_io)
+- [0x17-doubly_linked_lists](./0x17-doubly_linked_lists)
 
-## Contributors
 
-- @[**sara mabrouk**](https://github.com/Sara-mabrouk) `Full stack developer`
